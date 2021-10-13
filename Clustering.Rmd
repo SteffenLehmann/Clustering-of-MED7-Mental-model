@@ -4,9 +4,8 @@ output: html_notebook
 ---
 
 ```{r Libraries, include=FALSE}
-library(dplyr)
-library(factoextra)
-if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("factoextra")) install.packages("factoextra")
+  library(factoextra)
 ```
 
 ```{r load data, include=FALSE}
