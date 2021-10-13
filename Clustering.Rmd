@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r Libraries, include=FALSE}
+library(dplyr)
+library(factoextra)
+if (!require("tidyverse")) install.packages("tidyverse")
+```
+
+```{r load data, include=FALSE}
+df <- read.table("CardSortData.csv", header=TRUE, fill = FALSE, sep=",")
+```
+
+```{r data analysis}
+#get labels for each card
+df.labels = df[1:2]
+#table(data.labels)
+
+#Removing the labels from the data
+card_data <- df[3:33]
+#Figure out a better method for removing columns(TODO)
+
+card_data$Design.AV <- NULL
+card_data$PBL.Methods. <- NULL
+card_data$Development.and.analysis <- NULL
+
+#scaling the data or normalizing it
+Card_data_scale <- scale(card_data)
+
+#Computing the distance. This will be used during the clustering as it compares each data point's distance to a centroid.
+card_data <- dist(Card_data_scale)
+
+#principal component analysis, wss = Within Sum squares 
+Optimal_number_of_clusters<- fviz_nbclust(Card_data_scale, kmeans, method = "wss") 
+
+#Kmeans clustering
+KMC <-kmeans(Card_data_scale, centers = 9, nstart = 100, iter.max = 100) 
+
+#PLotting the Kmeans clusters and adding the card names(labels) back to the data set
+Kmeans.cluster <- KMC$cluster
+rownames(Card_data_scale) <- data$Card.name
+fviz_cluster(list(data=Card_data_scale, cluster=Kmeans.cluster))
+
+```
