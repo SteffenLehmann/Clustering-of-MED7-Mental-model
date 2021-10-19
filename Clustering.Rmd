@@ -35,7 +35,7 @@ card_data <- dist(Card_data_scale)
 Optimal_number_of_clusters<- fviz_nbclust(Card_data_scale, kmeans, method = "wss") 
 
 #Kmeans clustering
-KMC <-kmeans(Card_data_scale, centers = 9, nstart = 100, iter.max = 100) 
+KMC <-kmeans(Card_data_scale, centers = 6, nstart = 100, iter.max = 100) 
 
 #PLotting the Kmeans clusters and adding the card names(labels) back to the data set
 Kmeans.cluster <- KMC$cluster
