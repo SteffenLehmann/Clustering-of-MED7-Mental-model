@@ -31,7 +31,7 @@ Card_data_scale <- scale(card_data)
 #Computing the distance. This will be used during the clustering as it compares each data point's distance to a centroid.
 card_data <- dist(Card_data_scale)
 
-#principal component analysis, wss = Within Sum squares 
+#principal component analysis, wss = Within Sum squares. The longest intra cluster distance
 Optimal_number_of_clusters<- fviz_nbclust(Card_data_scale, kmeans, method = "wss") 
 
 #Kmeans clustering
