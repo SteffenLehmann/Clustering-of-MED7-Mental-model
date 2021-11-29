@@ -39,7 +39,7 @@ KMC <-kmeans(Card_data_scale, centers = 6, nstart = 100, iter.max = 100)
 
 #PLotting the Kmeans clusters and adding the card names(labels) back to the data set
 Kmeans.cluster <- KMC$cluster
-rownames(Card_data_scale) <- data$Card.name
+rownames(Card_data_scale) <- df$Card.name
 plot <- fviz_cluster(list(data=Card_data_scale, cluster=Kmeans.cluster))
 
 ```
