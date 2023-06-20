@@ -4,3 +4,4 @@ The goal of this project is to cluster a card sort done by MED7 2021. The sorted
 
 1. https://miro.com/app/board/o9J_lvELtCw=/?invite_link_id=453675077581 
 2. https://docs.google.com/spreadsheets/d/1HzIBX232undkapszq5c4pTEfxls6bI1yCukIwc9Kwb0/edit?usp=sharing
+3. https://docs.google.com/presentation/d/1XUM4U8muQNTuCODmEQbt6nvC9TPM-7Hnj9_qX5Vz0SU/edit?usp=sharing
